@@ -1,0 +1,22 @@
+.container{
+    border: 3px solid orange;
+}
+h2{
+ 
+    text-align: center;
+}
+h3{
+    text-align: center;
+color: orange;
+}
+button{
+    background-color: orange;
+}
+.orange{
+    background-color: orange;
+    text-align: center;
+}
+.btn{
+    background-color: orange;
+    border: solid orange;
+}

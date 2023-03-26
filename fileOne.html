@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Practice Session</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="fileOne.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="py-3"><u>Practice of making form with bootstrap </u></h2>
+        <hr>
+        <div class="row">
+            <h3>Book your slot</h3>
+            <p class="text-center">Our represented will call you within 1 hr selected time</p>
+        </div>
+        <hr>
+        
+        <div class="row">
+            <form id="my-form" target="_self" onsubmit="printDetails(event)">
+            <div class="col-md" id="col-1">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name" name="nameDetails">
+            </div>
+            </div>
+            <div class="col-md" id="col-md-2">
+            <label for="mail"class="form-label">Email:</label>
+            <input type="email" class="form-control" id="mail" name="mailDetails">
+            </div>
+            <div class="col-md" id="col-md-1">
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone:</label>
+            <input type="text" class="form-control" id="phone" name="phoneDetails">
+            </div>
+            </div>
+            <div class="col-md">
+                <div class="mb-3">
+                    <label for="schedule" class="form-label">Choose your slot:</label>
+                   <div class="row">
+                    <div class="col-md-6">
+                        <input type="date" class="form-control" id="schedule" name="scheduleDateDetails">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="time" class="form-control" id="schedule" name="scheduleTimeDetails">
+                    </div>
+                   </div>
+           
+            
+                </div>
+            </div>
+            <div class="col-md orange">
+                <div class="mb-3">
+                   <button type="submit" class="btn btn-primary">Get a Call</button>
+                </div>
+            </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="container">
+        <ul class="items">
+            <li class="item">List 1</li>
+            <li class="item">List 2</li>
+            <li class="item">List 3</li>
+            <li class="item">List 4</li>
+            <li class="item">List 5</li>
+        </ul>
+    </div>
+    <script src="fileOne.js"></script>
+</body>
+</html>
