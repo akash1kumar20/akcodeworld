@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Booking App</title>
+    <link rel="stylesheet" href="/bootstrap.css">
+</head>
+<body>
+    <div class="container" style="border: 5px solid black;">
+        <form target="_blank" onsubmit="printDetails(event)" id="my-form">
+            <div class="row">
+                <div class="col-md">
+                    <label for="nameValue" class="form-label bg-warning">Name:</label>
+                    <input type="text" id='nameValue' name="nameDetails" class="form-inline">
+                </div>
+                <div class="col-md">
+                    <label for="mailValue" class="form-label bg-warning">Email:</label>
+                    <input type="email" id='mailValue' name="mailDetails" class="form-inline">
+                </div>
+                <div class="col-md">
+                    <label for="phoneValue" class="form-label bg-warning">Phone:</label>
+                    <input type="text" id='phoneValue' name="phoneDetails" class="form-inline">
+                </div>
+                <div class="col-md">
+                    <input type="submit" class="btn btn-danger form-inline" value="Submit">
+                </div>
+            </div>
+        </form>
+        
+    </div>
+    <div class="container" class="bg-warning" id="containerDisplay"></div>
+    <script src="bookingApp.js"></script>
+</body>
+</html>
