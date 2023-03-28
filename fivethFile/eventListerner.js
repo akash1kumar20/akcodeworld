@@ -3,8 +3,10 @@ createELe.className = 'btn btn-dark mt-3 btn-dark';
 // createELe.setAttribute('onClick', 'alert("HEllo")')
 //with setAttribute we can also set the event listener inside the new element
 createELe.id = 'new-btn';
-createELeText = document.createTextNode = 'Submit it here';
-createELe.append(createELeText);
+createELeText = document.createTextNode('Submit it here');
+createELe.appendChild(createELeText);
+//other way to add text is createTextNode = '---value---' 
+//but when we use equal to sign then we use only append not appendChild
 console.log(createELe);
 
 let makeInvisible = document.querySelector('span');
