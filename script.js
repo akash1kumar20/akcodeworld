@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function showNewUserOnScreen(everyDetails){
     let toShow = document.getElementById('toDisplay');
     let create = document.createElement('div');
-    create.textContent = everyDetails.userName + '____' + everyDetails.userMail + '_____' + everyDetails.userPhone;
+    create.textContent = everyDetails.userName + '___' + everyDetails.userMail + '___' + everyDetails.userPhone;
     let editBtn = document.createElement('button');
     editBtn.className = 'btn btn-dark btn-sm ms-2 me-2 edit';
     editBtn.textContent = 'Edit';
@@ -48,4 +48,15 @@ function showNewUserOnScreen(everyDetails){
     delBtn.textContent = 'X';
     create.appendChild(delBtn);
     toShow.appendChild(create);
+
+    delBtn.onclick = () => {
+        axios
+      .delete(`https://crudcrud.com/api/837810a8c3f3484884023e5a7f078035/userData/${everyDetails._id}`)
+      .then(() => {
+        toShow.removeChild(create);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+}
 }
