@@ -21,13 +21,20 @@ function userData(event){
         console.log(error);
     })
 }
-axios.get("https://crudcrud.com/api/837810a8c3f3484884023e5a7f078035/userData", everyDetails).then((response) => {
-    showNewUserOnScreen(response.data);    
-    console.log(response);
+
+//by doing this our data will remain on screen even after refreshing the page.
+window.addEventListener('DOMContentLoaded', () => {
+    axios.get("https://crudcrud.com/api/837810a8c3f3484884023e5a7f078035/userData")
+    .then((response) => {
+        console.log(response);
+
+        for(var i=0; i<response.data.length; i++){
+            showNewUserOnScreen(response.data[i]);
+        }
     }).catch((error) => {
-        document.body.innerHTML += '<h2>Error 404</h2>';
         console.log(error);
     })
+})
 function showNewUserOnScreen(everyDetails){
     let toShow = document.getElementById('toDisplay');
     let create = document.createElement('div');
