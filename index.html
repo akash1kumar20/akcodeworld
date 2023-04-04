@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <title>Axios Crash Course</title>
-  </head>
-  <body>
-    <div class="container my-5">
-      <div class="text-center">
-        <h1 class="display-4 text-center mb-3">Axios Crash Course</h1>
-        <button class="btn btn-primary my-3" id="get">GET</button>
-        <button class="btn btn-info" id="post">POST</button>
-        <button class="btn btn-warning" id="update">PUT/PATCH</button>
-        <button class="btn btn-danger" id="delete">DELETE</button>
-        <button class="btn btn-secondary" id="sim">Sim Requests</button>
-        <button class="btn btn-secondary" id="headers">
-          Custom Headers
-        </button>
-        <button class="btn btn-secondary" id="transform">
-          Transform
-        </button>
-        <button class="btn btn-secondary" id="error">
-          Error Handling
-        </button>
-        <button class="btn btn-secondary" id="cancel">
-          Cancel
-        </button>
-      </div>
-      <hr />
-      <div id="res"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud-Crud</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    <header class="bg-warning text-white mt-2 mb-4">
+        <div class="container">
+            <h1>Book Your Appointment:</h1>
+        </div>
+    </header>
+    <div class="container">
+       <form target="_blank" onsubmit="userData(event)">
+        <div class="row mt-4 mb-4">
+            <label for="nameData" class="form-label"><b>Enter Your Name:</b></label>
+            <input type="text" id="nameData" name="nameValue" class="form-control">
+        </div>
+        <div class="row mt-4 mb-4">
+            <label for="mailData" class="form-label"><b>Enter Your Email:</b></label>
+            <input type="email" id="mailData" name="mailValue" class="form-control">
+        </div>
+        <div class="row mt-4 mb-4">
+            <label for="phoneData" class="form-label"><b>Enter Your Phone Number:</b></label>
+            <input type="text" id="phoneData" name="phoneValue" class="form-control">
+        </div>
+        <div class="row mt-4 mb-4">
+            <input type="submit" value='Submit' class="btn btn-warning">
+        </div>
+       </form>
+       <div id="toDisplay"></div>
     </div>
-
- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="main.js"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   <script src="script.js"></script>
+</body>
 </html>
