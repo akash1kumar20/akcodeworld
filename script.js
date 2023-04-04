@@ -10,10 +10,8 @@ function userData(event){
         userPhone
     };
 
-//    let convertData = JSON.stringify(everyDetails)
-    // console.log(convertData);
-    // localStorage.setItem(userMail,convertData);
-    axios.post("https://crudcrud.com/api/837810a8c3f3484884023e5a7f078035/userData", everyDetails).then((response) => {
+
+    axios.post("https://crudcrud.com/api/7e29463c1c5c4a108c31423c23c78295/userData", everyDetails).then((response) => {
     showNewUserOnScreen(response.data);    
     console.log(response);
     }).catch((error) => {
@@ -24,7 +22,7 @@ function userData(event){
 
 //by doing this our data will remain on screen even after refreshing the page.
 window.addEventListener('DOMContentLoaded', () => {
-    axios.get("https://crudcrud.com/api/837810a8c3f3484884023e5a7f078035/userData")
+    axios.get("https://crudcrud.com/api/7e29463c1c5c4a108c31423c23c78295/userData")
     .then((response) => {
         console.log(response);
 
@@ -38,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function showNewUserOnScreen(everyDetails){
     let toShow = document.getElementById('toDisplay');
     let create = document.createElement('div');
-    create.textContent = everyDetails.userName + '___' + everyDetails.userMail + '___' + everyDetails.userPhone;
+    create.textContent = everyDetails.userName + '____' + everyDetails.userMail + '_____' + everyDetails.userPhone;
     let editBtn = document.createElement('button');
     editBtn.className = 'btn btn-dark btn-sm ms-2 me-2 edit';
     editBtn.textContent = 'Edit';
@@ -50,13 +48,32 @@ function showNewUserOnScreen(everyDetails){
     toShow.appendChild(create);
 
     delBtn.onclick = () => {
-        axios
-      .delete(`https://crudcrud.com/api/837810a8c3f3484884023e5a7f078035/userData/${everyDetails._id}`)
-      .then(() => {
-        toShow.removeChild(create);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-}
+        axios.delete(`https://crudcrud.com/api/7e29463c1c5c4a108c31423c23c78295/userData/${everyDetails._id}`).then((response) => {
+            console.log(response);
+            toShow.removeChild(create);
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
+    editBtn.onclick = () => {
+        axios.delete(`https://crudcrud.com/api/7e29463c1c5c4a108c31423c23c78295/userData/${everyDetails._id}`).then((response) => {
+            console.log(response);
+            toShow.removeChild(create);
+        }).catch((error) => {
+            console.log(error);
+        })
+
+        axios.put(`https://crudcrud.com/api/7e29463c1c5c4a108c31423c23c78295/userData/${everyDetails._id}`,{
+            nameData: document.getElementById('nameData').value = everyDetails.userName,
+            mailData:  document.getElementById('mailData').value = everyDetails.userMail,
+            phoneData: document.getElementById('phoneData').value = everyDetails.userPhone
+        }).then((respone) => {
+            console.log(respone);
+            create.textContent = respone.data.nameData + '--' + respone.data.mailData + '--' + response.data.userPhone
+        }).catch((error) => {
+            console.log(error);
+        })
+        
+    }
 }
