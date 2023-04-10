@@ -1,0 +1,18 @@
+h2{
+    text-align: center;
+}
+.black{
+    border: 3px solid black;
+}
+.red{
+    border: 1px solid red;
+}
+.blue{
+    border: 1px solid blue;
+}
+.green{
+    border: 1px solid green;
+}
+.lightBlack{
+    border: 1px solid black;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Book</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="beauty.css">
+</head>
+<body>
+    <header class="bg-warning text-white bg-text mb-3 p-3">
+        <div class="container">
+            <h2>Order Summary:</h2>
+        </div>
+    </header>
+    <div class="container">
+        <form target="_blank" onsubmit="getDetails(event)">
+            <div class="row lightBlack">
+                <div class="col-md">
+                    <label for="priceValue" class="form-lable">Enter Price:</label>
+                    <input type="number" min="100" max="1000" id="priceValue" name="priceDetail" value="100" class="form-text me-3" required>
+
+                    <label for="dishValue" class="form-label">Choose Dish:</label>
+                    <input type="text" class="form-text me-3" id="dishValue" name="dishDetail" placeholder='Enter Dish Name' required>
+
+                    <label for="quantityValue" class="form-lable">Select Quantity:</label>
+                    <input type="number" min="1" max="5" id="quantityValue" name="quantityDetail" value="1" class="form-text me-3" required>
+
+                    <label for="tableValue" class="form-lable">Select Table:</label>
+                    <select id="tableValue" name="tableDetail" class="me-3" required>
+                        <option value="one" id="tableValueOne">Table 1</option>
+                        <option value="two">Table 2</option>
+                        <option value="three">Table 3</option>
+                    </select>
+                    <input type="submit" value="Confirm Order" class="btn btn-success btn-sm">
+
+
+                
+                </div>
+            </div>
+        </form>
+        <div class="container mt-4 p-3">
+            <h3><u>Orders:</u></h3>
+            <div class="row red mb-3 p-2" id="displayOne">
+                <b>Table 1 </b> 
+            </div>
+            <div class="row blue mb-3 p-2" id="displayTwo">
+                <b>Table 2 </b> 
+            </div>
+            <div class="row green mb-3 p-2" id="displayThree">
+                <b>Table 3 </b> 
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="brain.js"></script>
+</body>
+</html>
